@@ -92,10 +92,9 @@ model.load_weights('Pesos_modelo.h5')
 
 print("Introduzca duranción de la deteccion: ")
 duracion=int(input())
-resultado=[-2.0 for i in range(duracion)]
+resultado=[0 for i in range(duracion)]
 
 for i in range(duracion):
-    resultado[i]=-2
     image = np.empty((480, 480, 3), dtype=np.uint8)
     camera.capture(image, 'rgb')
     
