@@ -119,7 +119,7 @@ model.add(Activation('softmax'))
 
 print(model.summary())
 
-# Modelo se complia y entrena
+# Modelo se complia y entrena, con un numero de repeticiones(epoch) optimizado
 
 model.compile(loss='categorical_crossentropy',
               optimizer = Adam(lr=0.001),
@@ -131,6 +131,8 @@ history=model.fit(
                 validation_data=validation_generator,
                 batch_size=batch_size,
                 verbose=1)
+
+# Guardado del modelo, para luago cargarlo en la Raspberry
 
 model.save_weights("Pesos_modelo.h5")
 
